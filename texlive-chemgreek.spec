@@ -1,6 +1,6 @@
 Name:		texlive-chemgreek
 Version:	53437
-Release:	1
+Release:	2
 Summary:	Upright Greek letters in chemistry
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chemgreek
