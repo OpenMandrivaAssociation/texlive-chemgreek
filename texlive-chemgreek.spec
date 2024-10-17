@@ -3,7 +3,7 @@ Version:	53437
 Release:	2
 Summary:	Upright Greek letters in chemistry
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/chemgreek
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chemgreek
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemgreek.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemgreek.doc.r%{version}.tar.xz
