@@ -1,37 +1,24 @@
-Name:		texlive-chemgreek
-Version:	53437
-Release:	2
+%global tl_name chemgreek
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1a
+Release:	%{tl_revision}.1
 Summary:	Upright Greek letters in chemistry
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/chemgreek
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemgreek.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/chemgreek.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chemgreek.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/chemgreek.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides upright Greek letters in support of other
-chemistry packages (such as chemmacros). The package used to be
-distributed as a part of chemmacros.
+The package provides upright Greek letters in support of other chemistry
+packages (such as chemmacros). The package used to be distributed as a
+part of chemmacros.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/chemgreek
-%doc %{_texmfdistdir}/doc/latex/chemgreek
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
